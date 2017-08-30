@@ -1,0 +1,42 @@
+<h1>Eat-da-burger!</h1>
+<h5>Here at Eat-da-Burger we're always looking for suggestions for new burger creations. Submit your idea for a burger name below
+  and we'll add it to our lineup!</h5>
+
+<div class="row">
+
+  <div class="col s6">
+    <ul class="collection with-header">
+      <li class="collection-header"><h4>Uneaten:</h4></li>
+      {{#each burgers}} {{#unless this.devoured}}
+      <li class="collection-item">
+        <div>
+          {{this.burger_name}}
+          <form action="/{{this.id}}?_method=PUT" method="POST" class="secondary-content">
+            <input type="hidden" name="devoured" value="true">
+            <button class="btn waves-effect waves-light" type="submit">DEVOUR
+              <i class="material-icons right">restaurant</i>
+            </button>
+          </form>
+        </div>
+      </li>
+      {{/unless}} {{/each}}
+    </ul>
+  </div>
+
+  <div class="col s6">
+    <ul class="collection with-header">
+      <li class="collection-header"><h4>Eaten:</h4></li>
+      {{#each burgers}} {{#if this.devoured}}
+      <li class="collection-item">
+        {{this.burger_name}}
+      </li>
+      {{/if}} {{/each}}
+    </ul>
+  </div>
+
+</div>
+
+<form method="POST" action="/">
+  <input type="text" name="burger_name"></input>
+  <button class="btn waves-effect waves-light" type="submit">submit</button> {{!-- probably change button text later --}}
+</form>
