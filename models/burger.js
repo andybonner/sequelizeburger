@@ -1,10 +1,31 @@
 module.exports = function(sequelize, DataTypes) {
   var Burger = sequelize.define("Burger", {
-    burger_name: DataTypes.STRING,
-    devoured: DataTypes.BOOLEAN
+    burger_name: {
+      type: DataTypes.STRING,
+      // back-end validation:
+      // burger_name cannot be blank...
+      allowNull: false,
+      // ...and cannot be ""
+      validate: {
+        len: [1]
+      }
+    },
+    devoured_by: {
+      type: DataTypes.STRING,
+      defaultValue: null
+    }
   });
+
+  Burger.associate = function(models) {
+    Burger.belongsTo(models.Inventor, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   return Burger;
-}
+};
 
 // is imported, as part of parent folder "models", by api-routes.js
 
