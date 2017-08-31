@@ -1,3 +1,62 @@
 h1,h2,h3,h4,h5,h6 {
   font-family: "Permanent Marker", cursive;
 }
+
+body {
+  background: url(../img/table.jpg) no-repeat center/cover;
+  min-height: 100vh;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #CE2029;
+}
+
+.full-valign {
+  min-height: 100vh;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, .5);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.fire-engine-red {
+  color: #CE2029 !important;
+}
+
+.charcoal {
+  color: #282828 !important;
+}
+
+.big-form {
+  background-color: white;
+  padding: 1.5em;
+}
+
+/* .burger-container {
+  background-color: rgba(125, 125, 125, .5)
+} */
+
+/* .burger-svg {
+  height: 1em;
+  vertical-align: text-top;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+} */
+
+/* override Materialize's min-height for avatar pics */
+.collection .collection-item.avatar {
+  min-height: 25px;
+}
+
+/* adjust .secondary-content positioning */
+.collection .collection-item.avatar .secondary-content {
+  top:10px;
+}
+
+.invented {
+  font-style: italic;
+}

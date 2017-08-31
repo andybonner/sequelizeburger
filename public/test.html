@@ -1,20 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Eat-Da-Burger!</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <!--Import Google Icon Font-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     <!--Import materialize.css-->
-     <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
-  </head>
-  <body>
-    
-  
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/materialize.min.js"></script>
-  </body>
+
+<head>
+  <title>Eat-Da-Burger!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import display font-->
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+  <!--own css-->
+  <link href="assets/css/burger_style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="valign-wrapper full-valign">
+      <div class="content">
+        <h1 class="center-align fire-engine-red">Eat-da-burger!</h1>
+
+        <form method="POST" action="/" class="big-form">
+          <h5 class="charcoal">Here at Eat-da-Burger we're always looking for suggestions for new burger creations. Submit your idea below and
+            we'll add it to our lineup!</h5>
+          <div class="row">
+            <div class="col m6">
+              <div class="input-field">
+                <input type="text" name="burger_name" id="burger_name" required></input>
+                <label for="burger_name">Burger name</label>
+              </div>
+            </div>
+            <div class="col m6">
+              <div class="input-field">
+                <input type="text" name="burger_description" id="burger_description" maxlength="250"></input>
+                <label for="burger_description">Description (make it good!)</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col m6">
+              <div class="input-field">
+                <input type="text" name="inventor" id="inventor" required></input>
+                <label for="inventor">Your name</label>
+              </div>
+            </div>
+            <div class="col m6">
+              <button class="btn waves-effect waves-light" type="submit">submit</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="row">
+          <div class="col m6">
+            <ul class="collection with-header">
+              <li class="collection-header">
+                <h4>Uneaten:</h4>
+              </li>
+              <li class="collection-item avatar">
+                <img src="assets/img/burger.svg" alt="" class="circle">
+                <span class="title">
+                    FooBurger
+                  </span>
+                <p>
+                  100% all foo patty, topped with melted bar and fresh buzz.<br>
+                  <span class="invented">Invented by Billy</span>
+                </p>
+                <form action="/1?_method=PUT" method="POST" class="secondary-content">
+                  <input type="hidden" name="devoured" value="true">
+                  <a href="#" type="submit" class="btn-devour">DEVOUR<i class="material-icons right">restaurant</i></a>
+                </form>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="col m6">
+            <ul class="collection with-header">
+              <li class="collection-header">
+                <h4>Eaten:</h4>
+              </li>
+              <li class="collection-item avatar">
+                <img src="assets/img/burger.svg" alt="" class="circle">
+                <span class="title">
+                      BarBurger
+                    </span>
+                <p>
+                  100% all bar patty, topped with melted fizz and fresh buzz.<br>
+                  <span class="invented">Invented by Billy</span>
+                </p>
+                <p class="secondary-content grey-text">
+                  Eaten by Bob!
+                </p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+
+        <!-- /.content -->
+      </div>
+      <!-- /.valign-wrapper -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+</body>
+
 </html>
