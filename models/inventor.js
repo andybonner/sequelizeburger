@@ -17,3 +17,5 @@ module.exports = function(sequelize, DataTypes) {
   };
   return Inventor;
 };
+
+// is imported, as part of parent folder "models", by api-routes.js
