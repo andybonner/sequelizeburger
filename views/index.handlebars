@@ -45,8 +45,8 @@
             <img src="assets/img/burger.svg" alt="" class="circle">
             <span class="title">{{this.burger_name}}</span>
             <p>
-              {{this.burger_description}}<br> {{!-- Check how it references inventor --}}
-              <span class="invented">Invented by {{this.Inventor}}</span>
+              {{this.burger_description}}<br>
+              <span class="invented">Invented by {{this.Inventor.inventor_name}}</span>
             </p>
             <form action="/1?_method=PUT" method="POST" class="secondary-content">
               <input type="hidden" name="devoured" value="true">
@@ -68,8 +68,8 @@
             <img src="assets/img/burger.svg" alt="" class="circle">
             <span class="title">{{this.burger_name}}</span>
             <p>
-              {{this.burger_description}}<br> {{!-- check Inventor --}}
-              <span class="invented">Invented by {{this.Inventor}}</span>
+              {{this.burger_description}}<br>
+              <span class="invented">Invented by {{this.Inventor.inventor_name}}</span>
             </p>
             <p class="secondary-content grey-text">
               Eaten by {{this.devoured_by}}!

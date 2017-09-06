@@ -5,11 +5,11 @@ module.exports = function(app) {
     db.Burger.findAll({
       include: [db.Inventor]
     }).then(function(dbBurgers) {
-      // console.log("dbBurgers", dbBurgers);
+      console.log("dbBurgers", dbBurgers);
       let hbarsObj = {
         burgers: dbBurgers
       }
-      // console.log("hbarsObj", hbarsObj);
+      console.log("hbarsObj", hbarsObj);
       res.render("index", hbarsObj);
     });
   });
