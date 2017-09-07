@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Inventor = sequelize.define("Inventor", {
+  const Inventor = sequelize.define("Inventor", {
     inventor_name: {
       type: DataTypes.STRING,
       // back-end validation:
