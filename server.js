@@ -30,7 +30,7 @@ const routes = require("./routes/api-routes")(app);
 
 // app.use("/", routes);
 
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force: true}).then(() => {
   app.listen(PORT, () => {
     console.log("Listening on port", PORT);
   });
