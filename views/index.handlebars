@@ -48,13 +48,26 @@
               {{this.burger_description}}<br>
               <span class="invented">Invented by {{this.Inventor.inventor_name}}</span>
             </p>
-            <form action="/1?_method=PUT" method="POST" class="secondary-content">
-              <input type="hidden" name="devoured" value="true">
-              <a href="#" type="submit" class="btn-devour">DEVOUR<i class="material-icons right">restaurant</i></a>
-            </form>
+              <a href="#eat-modal" type="submit" class="secondary-content btn-devour modal-trigger" data-id="{{this.id}}">DEVOUR<i class="material-icons right">restaurant</i></a>
           </li>
           {{/unless}} {{/each}}
         </ul>
+      </div>
+
+      <!-- name collection modal on "devour" -->
+      <div id="eat-modal" class="modal">
+        <div class="modal-content">
+          <h4>Who-eat-da-burger?</h4>
+          <p>Enter your name, so everybody will know just who devoured this delicious burger!</p>
+          {{!-- action attr filled in dynamically by JS to include id --}}
+          <form id="devour-form" action="" method="POST">
+            <div class="input-field">
+              <input type="text" name="devoured_by" id="devoured_by" required></input>
+              <label for="devoured_by">Your name</label>
+            </div>
+            <button type="submit" class="btn modal-trigger">OM NOM</button>
+          </form>
+        </div>
       </div>
 
       <!-- "Eaten" column -->

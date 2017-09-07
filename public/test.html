@@ -66,10 +66,7 @@
                   100% all foo patty, topped with melted bar and fresh buzz.<br>
                   <span class="invented">Invented by Billy</span>
                 </p>
-                <form action="/1?_method=PUT" method="POST" class="secondary-content">
-                  <input type="hidden" name="devoured" value="true">
-                  <a href="#" type="submit" class="btn-devour">DEVOUR<i class="material-icons right">restaurant</i></a>
-                </form>
+                  <a href="#eat-modal" type="submit" class="secondary-content btn-devour modal-trigger" data-id="1">DEVOUR<i class="material-icons right">restaurant</i></a>
               </li>
 
             </ul>
@@ -105,9 +102,25 @@
     </div>
     <!-- /.container -->
   </div>
+
+  <div id="eat-modal" class="modal">
+    <div class="modal-content">
+      <h4>Who-eat-da-burger?</h4>
+      <p>Enter your name, so everybody will know just who devoured this delicious burger!</p>
+      <form id="devour-form" action="" method="POST">
+        <div class="input-field">
+          <input type="text" name="devoured_by" id="devoured_by" required></input>
+          <label for="devoured_by">Your name</label>
+        </div>
+        <button type="submit" class="btn modal-trigger">OM NOM</button>
+      </form>
+    </div>
+  </div>
+          
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
 </body>
 
 </html>
